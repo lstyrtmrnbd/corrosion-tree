@@ -1,5 +1,5 @@
 from tkinter import *
-
+from tkinter import ttk
 
 class Tree:
 
@@ -30,18 +30,25 @@ class MetalInfo:
         self.tensile_str = kwargs.get("tensile_str")
         self.density = kwargs.get("density")
         self.other_facts = kwargs.get("other_facts") # list of other facts
-        
 
-blue1 = Node("Whatever end")
+def main():
 
-red1 = Node("Whatever i say", blue1, child2)
+    root = Tk()
 
-Node.branch(childValue)
+    root.title("Corrosion Decisions")
+    
+    frame = ttk.Frame(root, padding="3 3 3 3")
+    frame.grid(column=0, row=0, sticky=(N, S, E, W))
+    frame.columnconfigure(0, weight=1)
+    frame.rowconfigure(0, weight=1)
 
-Tree(rootNode)
+    root.mainloop()
 
-tree1 = Tree(red1)
+# misc. API examples: 
+# blue1 = Node("Whatever end")
+# red1 = Node("Whatever i say", blue1, child2)
+# Node.branch(childValue)
+# Tree(rootNode)
 
-tree1.branch(val)
-
-    currentNode = currentNode.child(val)
+if __name__=="__main__":
+   main()
