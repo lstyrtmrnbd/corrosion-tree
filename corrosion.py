@@ -48,6 +48,17 @@ def main():
     frame.columnconfigure(0, weight=1)
     frame.rowconfigure(0, weight=1)
 
+    ss_304 = MetalInfo({
+        "name":"SS 304",
+        "picture":"",
+        "Price":"4.69",
+        "Density":"490 - 500",
+        "Tensile strength":"74 - 90",
+        "Thermal conductivity":"2.62 - 3.18",
+        "Melting point":"2552 - 2642",
+        "Specific Heat":"0.37 - 0.41"
+    })
+
     root.mainloop()
 
 # misc. API examples: 
