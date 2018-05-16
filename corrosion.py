@@ -23,14 +23,20 @@ class Leaf(Node):
 
 class MetalInfo:
 
-    def __init__(self, **kwargs):
-        self.picture = kwargs.get("picture")
-        self.price = kwargs.get("price")
-        self.melting_pt = kwargs.get("melting_pt")
-        self.tensile_str = kwargs.get("tensile_str")
-        self.density = kwargs.get("density")
-        self.other_facts = kwargs.get("other_facts") # list of other facts
+    # argument is tuples of key:value pairs for dictionary
+    def __init__(self, starting_dict):
+        #self.picture = pairs.get("picture")
+        #self.price = pairs.get("price")
+        #self.melting_pt = pairs.get("melting_pt")
+        #self.tensile_str = pairs.get("tensile_str")
+        #self.density = pairs.get("density")
+        #self.other_facts = pairs.get("other_facts") # list of other facts
 
+        self.info = starting_dict
+        
+def info_into_frame(frame, metal_info):
+    return None
+        
 def main():
 
     root = Tk()
