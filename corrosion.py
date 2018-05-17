@@ -16,7 +16,7 @@ metal_infos = [
         "Tensile strength":"74 - 90",
         "Thermal conductivity":"2.62 - 3.18",
         "Melting point":"2552 - 2642",
-        "Specific Heat":"0.37 - 0.41"
+        "Specific heat":"0.37 - 0.41"
     }),
 
     MetalInfo({
@@ -27,7 +27,7 @@ metal_infos = [
         "Tensile strength":"70 - 90",
         "Thermal conductivity":"24/3 - 3.18",
         "Melting point":"2507 - 2552",
-        "Specific Heat":"0.38 - 0.41"
+        "Specific heat":"0.38 - 0.41"
     }),
 
     MetalInfo({
@@ -38,7 +38,7 @@ metal_infos = [
         "Tensile strength":"",
         "Thermal conductivity":"",
         "Melting point":"",
-        "Specific Heat":""
+        "Specific heat":""
     }),
 
     ]
