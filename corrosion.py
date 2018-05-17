@@ -59,9 +59,9 @@ class Node:
 
 class Leaf(Node):
 
-    def __init__(self, *metal_infos):
+    def __init__(self, metal_infos_list):
         Node.__init__(self, "")
-        self.metal_infos = metal_infos
+        self.metal_infos = metal_infos_list
 
 def info_into_frame(frame, metal_info):
     return None
