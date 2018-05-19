@@ -31,7 +31,7 @@ function scrapeMetalInfos(count) {
   for(var i = 0; i < count; i++) {
    
     colLetter = String.fromCharCode(66 + i); // 66 is 'B'
-    Logger.log(colLetter);
+    //Logger.log(colLetter);
     infos += scrapeMetalInfo(ss, colLetter) + ",\n\n";
   }
   
