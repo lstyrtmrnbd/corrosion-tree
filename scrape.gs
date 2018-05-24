@@ -1,5 +1,7 @@
-// GOOGLE Sheets script
+// Google Sheets script
 // scrape the data necessary for embedding in corrosion.py
+var indent = "    "
+
 function quickScrape() {
   
   Logger.log(scrapeMetalInfo(SpreadsheetApp.getActiveSheet(), "B"));
@@ -7,7 +9,7 @@ function quickScrape() {
 
 function fullScrape() {
  
-  scrapeMetalInfos(10);
+  scrapeMetalInfos(43);
 }
 
 function scrapeMetalInfo(spreadsheet, columnString) {
@@ -30,26 +32,42 @@ function scrapeMetalInfos(count) {
   var colLetter = "";
   for(var i = 0; i < count; i++) {
    
-    colLetter = String.fromCharCode(66 + i); // 66 is 'B'
-    //Logger.log(colLetter);
-    infos += scrapeMetalInfo(ss, colLetter) + ",\n\n";
+    colLetter = countFromB(66 + i); // 66 is 'B'
+    var value = scrapeMetalInfo(ss, colLetter) + ",\n\n";
+    //infos += value;
+    ss.getRange(colLetter + "14").setValue(value);
   }
+  //Logger.log(infos);
+}
+
+function countFromB(count) {
+ 
+  var rem = 65;
+  var colLetter = count;
+  var column = String.fromCharCode(count);
   
-  Logger.log(infos);
+  if(count > 90) {
+   
+   rem += count % 91;
+   colLetter = 65;
+   column = String.fromCharCode(colLetter) + String.fromCharCode(rem);
+  }
+
+  return column;
 }
 
 function formatRawInfo(labels, values) {
 
   var formattedString = "MetalInfo({\n" + 
-                        "    \"name\":\"" + values[0] + "\",\n" + 
-                        "    \"picture\":\"\",\n";
+                        indent + "\"name\":\"" + values[0] + "\",\n" + 
+                        indent + "\"picture\":\"\",\n";
   
   for(var i = 0; i < labels.length; i++) {
     
     var label = labels[i][0].split("(");
     label = label[0].trim();
     
-    formattedString += "    ";
+    formattedString += indent;
     formattedString += "\"" + label + "\":\"" + values[i + 1] + "\",\n";
   }
   
