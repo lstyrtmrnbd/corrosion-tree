@@ -524,12 +524,21 @@ def main():
 
     root.title("Corrosion Decisions")
     
-    frame = ttk.Frame(root, padding="3 3 3 3")
-    frame.grid(column=0, row=0, sticky=(N, S, E, W))
-    frame.columnconfigure(0, weight=1)
-    frame.rowconfigure(0, weight=1)
+    mainframe = ttk.Frame(root, padding="3 3 3 3")
+    mainframe.grid(column=0, row=0, sticky=(N, S, E, W))
+    mainframe.columnconfigure(0, weight=1)
+    mainframe.rowconfigure(0, weight=1)
 
-    info_into_frame(frame, metal_infos[0])
+    frames = []
+    
+    for i in range(0, 6):
+        current_frame = ttk.Frame(mainframe)
+        current_frame.grid(column=i, row=1)
+        frames.append(current_frame)
+
+    info_into_frame(frames[0], metal_infos[0])
+    info_into_frame(frames[1], metal_infos[1])
+    info_into_frame(frames[2], metal_infos[2])
 
     root.mainloop()
     
