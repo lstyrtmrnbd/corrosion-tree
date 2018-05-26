@@ -502,7 +502,21 @@ class Leaf(Node):
         self.metal_infos = metal_infos_list
 
 def info_into_frame(frame, metal_info):
-    return None
+    metal_name = ttk.Label(frame, text=metal_info.info["name"])
+    metal_name.grid(column=2, row=1)
+    metal_price = ttk.Label(frame, text=metal_info.info["Price"])
+    metal_price.grid(column=2, row=2)
+    metal_density = ttk.Label(frame, text=metal_info.info["Density"])
+    metal_density.grid(column=2, row=3)
+    metal_tensile = ttk.Label(frame, text=metal_info.info["Tensile strength"])
+    metal_tensile.grid(column=2, row=4)
+    metal_thermal = ttk.Label(frame, text=metal_info.info["Thermal conductivity"])
+    metal_thermal.grid(column=2, row=5)
+    metal_melting = ttk.Label(frame, text=metal_info.info["Melting point"])
+    metal_melting.grid(column=2, row=6)
+    metal_specific = ttk.Label(frame, text=metal_info.info["Specific heat"])
+    metal_specific.grid(column=2, row=7)
+    return frame
         
 def main():
 
@@ -514,6 +528,8 @@ def main():
     frame.grid(column=0, row=0, sticky=(N, S, E, W))
     frame.columnconfigure(0, weight=1)
     frame.rowconfigure(0, weight=1)
+
+    info_into_frame(frame, metal_infos[0])
 
     root.mainloop()
     
