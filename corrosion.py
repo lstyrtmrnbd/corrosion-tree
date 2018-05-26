@@ -516,7 +516,18 @@ def info_into_frame(frame, metal_info):
     metal_melting.grid(column=2, row=6)
     metal_specific = ttk.Label(frame, text=metal_info.info["Specific heat"])
     metal_specific.grid(column=2, row=7)
-    return frame
+
+## fills a frame with a grid of frames
+def fill_frame(mainframe, width, height):
+    frames = []
+
+    for w in range(0, width):
+        for h in range(0, height):
+            current_frame = ttk.Frame(mainframe)
+            current_frame.grid(column=w, row=h)
+            frames.append(current_frame)
+        
+    return frames
         
 def main():
 
@@ -529,12 +540,7 @@ def main():
     mainframe.columnconfigure(0, weight=1)
     mainframe.rowconfigure(0, weight=1)
 
-    frames = []
-    
-    for i in range(0, 6):
-        current_frame = ttk.Frame(mainframe)
-        current_frame.grid(column=i, row=1)
-        frames.append(current_frame)
+    frames = fill_frame(mainframe, 7, 1)
 
     info_into_frame(frames[0], metal_infos[0])
     info_into_frame(frames[1], metal_infos[1])
