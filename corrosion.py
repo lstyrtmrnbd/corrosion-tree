@@ -5,6 +5,7 @@ class MetalInfo:
 
     def __init__(self, starting_dict):
         self.info = starting_dict
+        self.name = info["name"]
 
 metal_infos = [
     MetalInfo({
@@ -518,8 +519,8 @@ class Tree:
     def __init__(self, root_node):
         self.current_node = root_node
 
-    def branch(self, child_val):
-        self.current_node = self.current_node.children[child_val]
+    def branch(self, child_index):
+        self.current_node = self.current_node.children[child_index]
 
 class Node:
 
@@ -541,6 +542,16 @@ class Leaf(Node):
     def __init__(self, metal_infos_list):
         Node.__init__(self, "")
         self.metal_infos = metal_infos_list
+
+aero_leaf0 = Node()
+
+root_node = Node(["Is the material used in aerospace as airplane body or turbines?",
+                  "Is the material to be used in pharmaceutical or food industry when taste or color contamination is avoided?",
+                  "Is the material used in electronics as circuit boards, wires, covers, etc?",
+                  "Is the material used in chemical processing, oil refinery, vessels, pipes, broiler, heat exchange or other harsh environment?",
+                  "Is the material used in underwater applications such as valves, pumps, or condensers?",
+                  "Is the material to be used in pipes in a mild environment?",
+                  "Is the material to be used in automobiles?"])
         
 def main():
 
