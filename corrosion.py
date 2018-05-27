@@ -481,41 +481,25 @@ metal_infos = [
     })
 ]
 
-class Tree:
-
-    def __init__(self, root_node):
-        self.current_node = root_node
-
-    def branch(self, child_val):
-        self.current_node = self.current_node.children[child_val]
-
-class Node:
-
-    def __init__(self, text, *children):
-        self.children = children
-        self.text = text
-
-class Leaf(Node):
-
-    def __init__(self, metal_infos_list):
-        Node.__init__(self, "")
-        self.metal_infos = metal_infos_list
-
 def info_into_frame(frame, metal_info):
     metal_name = ttk.Label(frame, text=metal_info.info["name"])
-    metal_name.grid(column=2, row=1)
+    metal_name.grid(column=1, row=1)
     metal_price = ttk.Label(frame, text=metal_info.info["Price"])
-    metal_price.grid(column=2, row=2)
+    metal_price.grid(column=1, row=2)
     metal_density = ttk.Label(frame, text=metal_info.info["Density"])
-    metal_density.grid(column=2, row=3)
+    metal_density.grid(column=1, row=3)
     metal_tensile = ttk.Label(frame, text=metal_info.info["Tensile strength"])
-    metal_tensile.grid(column=2, row=4)
+    metal_tensile.grid(column=1, row=4)
     metal_thermal = ttk.Label(frame, text=metal_info.info["Thermal conductivity"])
-    metal_thermal.grid(column=2, row=5)
+    metal_thermal.grid(column=1, row=5)
     metal_melting = ttk.Label(frame, text=metal_info.info["Melting point"])
-    metal_melting.grid(column=2, row=6)
+    metal_melting.grid(column=1, row=6)
     metal_specific = ttk.Label(frame, text=metal_info.info["Specific heat"])
-    metal_specific.grid(column=2, row=7)
+    metal_specific.grid(column=1, row=7)
+
+def message_into_frame(frame, message):
+    message_label = ttk.Label(frame, text=message)
+    message.grid(column=1, row=1)
 
 ## fills a frame with a grid of frames
 def fill_frame(mainframe, width, height):
@@ -528,6 +512,35 @@ def fill_frame(mainframe, width, height):
             frames.append(current_frame)
         
     return frames
+
+class Tree:
+
+    def __init__(self, root_node):
+        self.current_node = root_node
+
+    def branch(self, child_val):
+        self.current_node = self.current_node.children[child_val]
+
+class Node:
+
+    def __init__(self, options, *children):
+        self.children = children
+        self.options = options
+
+    def option_button(self, frame, option_index):
+        button = ttk.Button(frame, text=options[option_index])
+
+    def into_frame(self, frame):
+        frames = fill_frame(frame, options.length(), 1)
+
+        for i in range(0, frames.length()):
+            self.option_button(frame[i], i)
+
+class Leaf(Node):
+
+    def __init__(self, metal_infos_list):
+        Node.__init__(self, "")
+        self.metal_infos = metal_infos_list
         
 def main():
 
