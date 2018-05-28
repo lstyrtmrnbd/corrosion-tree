@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <MetalInfo name="Carbon Steel" picture="" price="1" density="490" tensile_strength="92.1" thermal_conductivity="132-645" melting_point="2600 - 2800" specific_heat="0.12"  />
+  <MetalInfo name="SS 304" picture="" price="4.69" density="490 - 500" tensile_strength="74 - 90" thermal_conductivity="112-149" melting_point="2552 - 2642" specific_heat="0.37 - 0.41"  />
+  <MetalInfo name="SS 316" picture="" price="4.69" density="491-504" tensile_strength="70 - 90" thermal_conductivity="113" melting_point="2507 - 2552" specific_heat="0.38 - 0.41"  />
+  <MetalInfo name="Aluminum" picture="" price="1" density="168.5" tensile_strength="1.8-20.3" thermal_conductivity="625-1710" melting_point="1220" specific_heat="0.165"  />
+  <MetalInfo name="Aluminum 3xxx" picture="" price="1" density="169 - 171" tensile_strength="18.9" thermal_conductivity="1200" melting_point="1170-1210" specific_heat="0.21"  />
+  <MetalInfo name="Nickel 200" picture="" price="12" density="555" tensile_strength="68" thermal_conductivity="487" melting_point="2615-2635" specific_heat="0.109"  />
+  <MetalInfo name="Nickel 205" picture="" price="9" density="555" tensile_strength="65" thermal_conductivity="306" melting_point="2615-2635" specific_heat="0.109"  />
+  <MetalInfo name="Nickel 270" picture="" price="9" density="555" tensile_strength="50" thermal_conductivity="597" melting_point="2649" specific_heat="0.11"  />
+  <MetalInfo name="Inconel 600" picture="" price="8" density="529" tensile_strength="95" thermal_conductivity="103.32" melting_point="2469 - 2575" specific_heat="0.106"  />
+  <MetalInfo name="Inconel 690" picture="" price="8.5" density="511" tensile_strength="110" thermal_conductivity="84" melting_point="2450-2510" specific_heat="0.108"  />
+  <MetalInfo name="Incoloy 800" picture="" price="7" density="496" tensile_strength="87" thermal_conductivity="84.96000000000001" melting_point="2475 - 2525" specific_heat="0.11"  />
+  <MetalInfo name="NiMo" picture="" price="20-50" density="574" tensile_strength="125" thermal_conductivity="76.92" melting_point="2840" specific_heat="0.09 - 0.093"  />
+  <MetalInfo name="Titanium" picture="" price="25.5" density="281.7" tensile_strength="31.9" thermal_conductivity="117.96000000000001" melting_point="3000 - 3040" specific_heat="0.13"  />
+  <MetalInfo name="Aluminum 7xxx" picture="" price="2" density="169-180" tensile_strength="10-105" thermal_conductivity="798-1540" melting_point="889-1220" specific_heat="0.205-0.229"  />
+  <MetalInfo name="Ti-6Al-4V" picture="" price="10.00-12.00" density="276" tensile_strength="131" thermal_conductivity="46.5" melting_point="2919-3020" specific_heat="0.1258"  />
+  <MetalInfo name="Ti 6-2-4-2" picture="" price="8" density="283" tensile_strength="146" thermal_conductivity="49.3" melting_point="3090" specific_heat="0.11"  />
+  <MetalInfo name="TIMETAL 834" picture="" price="???" density="283" tensile_strength="153" thermal_conductivity="49" melting_point="3020" specific_heat="0.125"  />
+  <MetalInfo name="Haynes Waspaloy" picture="" price="8" density="511" tensile_strength="194" thermal_conductivity="87.4 (392F)" melting_point="2430-2480" specific_heat="0.125"  />
+  <MetalInfo name="Inconel 718" picture="" price="9" density="511" tensile_strength="160" thermal_conductivity="79.1" melting_point="2300-2437" specific_heat="0.104"  />
+  <MetalInfo name="Arsenical Aluminum Brass C68700" picture="" price="4.00 - 4.50" density="520" tensile_strength="60" thermal_conductivity="58" melting_point="1710" specific_heat="0.09"  />
+  <MetalInfo name="Invar 36" picture="" price="18" density="503" tensile_strength="90" thermal_conductivity="70.44" melting_point="2600" specific_heat="0.123"  />
+  <MetalInfo name="Super Invar 32-5" picture="" price="18" density="508" tensile_strength="70" thermal_conductivity="72.6" melting_point="2600" specific_heat="0.12"  />
+  <MetalInfo name="42 Alloy" picture="" price="15" density="506" tensile_strength="71" thermal_conductivity="72.9" melting_point="2600" specific_heat="0.12"  />
+  <MetalInfo name="45 Alloy" picture="" price="15" density="509" tensile_strength="85-115" thermal_conductivity="75" melting_point="2600" specific_heat="0.12"  />
+  <MetalInfo name="50 Alloy" picture="" price="15" density="512" tensile_strength="85-115" thermal_conductivity="94" melting_point="2600" specific_heat="0.12"  />
+  <MetalInfo name="Kovar" picture="" price="20" density="522" tensile_strength="75" thermal_conductivity="120" melting_point="2640" specific_heat="0.105-0.155"  />
+  <MetalInfo name="HyMu 80" picture="" price="34" density="546" tensile_strength="79" thermal_conductivity="240" melting_point="2649" specific_heat="0.118"  />
+  <MetalInfo name="Bronze" picture="" price="7" density=" 462 - 556" tensile_strength="37" thermal_conductivity="180" melting_point="1675" specific_heat="0.104"  />
+  <MetalInfo name="Aluminum Bronze C95400" picture="" price="5" density=" 481 - 543" tensile_strength="75" thermal_conductivity="528" melting_point="1881 - 1900" specific_heat="0.09"  />
+  <MetalInfo name="Copper Nickel 90/10" picture="" price="4.5" density="556" tensile_strength="44-60" thermal_conductivity="277" melting_point="2012 - 2093" specific_heat="0.09"  />
+  <MetalInfo name="Copper Nickel 70/30 (C71500)" picture="" price="4.5" density="559" tensile_strength="25-43" thermal_conductivity="201" melting_point="2138 - 2264" specific_heat="0.09"  />
+  <MetalInfo name="Copper-Nickel Alloy" picture="" price="4.5" density="551" tensile_strength="56-160" thermal_conductivity="121-204" melting_point="1170-1350" specific_heat="0.12"  />
+  <MetalInfo name="Al 2xxx" picture="" price="1" density="161-180" tensile_strength="25-97.2" thermal_conductivity="583-1390" melting_point="935-1240" specific_heat="0.2-0.221"  />
+  <MetalInfo name="Cobalt Alloys" picture="" price="25" density="430-743" tensile_strength="11.6-368" thermal_conductivity="58.3-1390" melting_point="2000-2820" specific_heat="0.0837-0.12"  />
+  <MetalInfo name="Copper 101/102" picture="" price="3.86" density="558" tensile_strength="32-66" thermal_conductivity="226" melting_point="1981" specific_heat="0.092"  />
+  <MetalInfo name="Phosphor Bronze C52400" picture="" price="4.72" density="548" tensile_strength="66-147" thermal_conductivity="348" melting_point="1550-1830" specific_heat="0.09"  />
+  <MetalInfo name="Nickel-Silver (Alloy 770)" picture="" price="5.76" density="543" tensile_strength="61-120" thermal_conductivity="204" melting_point="1930" specific_heat="0.09"  />
+  <MetalInfo name="Molybdenum" picture="" price="11.7" density="638" tensile_strength="120-200" thermal_conductivity="985" melting_point="4730" specific_heat="0.0621"  />
+  <MetalInfo name="Tungsten" picture="" price="31.4" density="1202" tensile_strength="100-500" thermal_conductivity="813-1133" melting_point="6170" specific_heat="0.032"  />
+  <MetalInfo name="Tantalum" picture="" price="400" density="1042" tensile_strength="41-120" thermal_conductivity="377" melting_point="5162" specific_heat="0.036"  />
+  <MetalInfo name="Nichrome" picture="" price="13.5" density="524" tensile_strength="70-115" thermal_conductivity="78.3" melting_point="2550" specific_heat="0.107"  />
+  <MetalInfo name="Copper" picture="" price="3" density="557.5" tensile_strength="30.3-50" thermal_conductivity="2761" melting_point="1985" specific_heat="0.092"  />
+  <MetalInfo name="Low-Alloy Steel" picture="" price="0.5" density="468-504" tensile_strength="26.1-396" thermal_conductivity="222-435" melting_point="" specific_heat="0.081-0.120"  />
+</root>
