@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter import ttk
+from math import *
 import xml.etree.ElementTree as et
 
 class MetalInfo:
@@ -36,10 +37,6 @@ def info_into_frame(frame, metal_info):
     metal_specific = ttk.Label(frame, text=metal_info.info["specific_heat"])
     metal_specific.grid(column=1, row=7)
 
-def message_into_frame(frame, message):
-    message_label = ttk.Label(frame, text=message)
-    message.grid(column=1, row=1)
-
 ## fills a frame with a grid of frames
 def fill_frame(mainframe, width, height):
     frames = []
@@ -51,6 +48,24 @@ def fill_frame(mainframe, width, height):
             frames.append(current_frame)
         
     return frames
+
+## parses tree and returns base frame
+def read_frame_tree(filename):
+    tree = et.parse(filename)
+    root = tree.getroot()
+
+    return root.find("Frame")
+
+def options_into_frame(parent, frame):
+    max_width = 5
+    length = list(parent).length()
+    height = ceil(length / 2)
+    
+    frames = fill_frame(length, max_width, height)
+
+    for frame in frames:
+        button = ttk.Button(frame)
+        button.grid(column=0, row=0)
 
 class Tree:
 
