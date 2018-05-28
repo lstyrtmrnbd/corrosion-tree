@@ -20,10 +20,10 @@ function scrapeMetalInfo(spreadsheet, columnString) {
   var labels = spreadsheet.getRange("Sheet1!A6:A11").getValues();
   var values = spreadsheet.getRange(valueRange).getValues();
   
-  return formatRawInfo(labels, values);
+  return formatXMLInfo(labels, values);
 }
 
-// scrapes and concats all info
+// scrapes count infos
 function scrapeMetalInfos(count) {
   
   var ss = SpreadsheetApp.getActiveSheet();
@@ -33,11 +33,12 @@ function scrapeMetalInfos(count) {
   for(var i = 0; i < count; i++) {
    
     colLetter = countFromB(66 + i); // 66 is 'B'
-    var value = scrapeMetalInfo(ss, colLetter) + ",\n\n";
-    //infos += value;
-    ss.getRange(colLetter + "14").setValue(value);
+    var value = scrapeMetalInfo(ss, colLetter);
+    infos += value;
+    //ss.getRange(colLetter + "14").setValue(value);
   }
-  //Logger.log(infos);
+  
+  Logger.log(infos);
 }
 
 function countFromB(count) {
@@ -54,6 +55,24 @@ function countFromB(count) {
   }
 
   return column;
+}
+
+function formatXMLInfo(labels, values) {
+ 
+  var formattedString = "<MetalInfo name=\"" + values[0] + "\" " + 
+                        "picture=\"\" ";
+  
+  for(var i = 0; i < labels.length; i++) {
+  
+    var label = labels[i][0].split("(");
+    label = label[0].trim();
+  
+    formattedString += label + "=\"" + values[i + 1] + "\" ";
+  }
+    
+  formattedString += " />\n"
+  
+  return formattedString;
 }
 
 function formatRawInfo(labels, values) {
