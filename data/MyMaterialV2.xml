@@ -19,29 +19,58 @@
     <Option value="Is the material used in aerospace as airplane body or turbines?">
       <Frame>
           <Option value="Low strength covers, skins, panels"></Option>
-            <Leaf value="Al 2xxx">
+            <Leaf value="Al 2xxx"/>
           </Option>    
-          <Option value="High Strength stringers, frames, beams, or upper wing covers?"?
-            <Leaf value=Aluminum 7xxx"
+          <Option value="High Strength stringers, frames, beams, or upper wing covers?">
+            <Leaf value="Aluminum 7xxx"/>
           </Option>
           <Option value=Moving or stationary parts within jet turbines?"
             <Frame>
              <Option value="Temperatures below 300 C such as the fan or the compressor parts?>
-              <Leaf value="Ti-6Al-4V">
-              <Leaf value="Ti 6-2-4-2">
-              <Leaf value="TIMETAL 834">
-              <Leaf value="Cobalt Alloys">
+              <Leaf value="Ti-6Al-4V"/>
+              <Leaf value="Ti 6-2-4-2"/>
+              <Leaf value="TIMETAL 834"/>
+              <Leaf value="Cobalt Alloys"/>
              </Option>
              <Option value="High temperature and stress such as turbine blades, combustion chamber, or exhaust?">
-               <Leaf value="Inconel 600">
-               <Leaf value="Inconel 690">
-               <Leaf value="Haynes Waspaloy">
-               <Leaf value="Cobalt Alloys">
+               <Leaf value="Inconel 600"/>
+               <Leaf value="Inconel 690"/>
+               <Leaf value="Haynes Waspaloy"/>
+               <Leaf value="Cobalt Alloys"/>
+             </Option>
+            </Frame>
       </Frame>
     </Option>
     
-    <Option value="Is the material used in chemical processing, oil refinery, vessels, pipes, broiler, heat exchanger or other harsh environment?">
+    <Option value="The material is used in chemical processing, oil refinery, vessels, pipes, broiler, heat exchanger or other harsh environment">
       <Frame>
+        <Option value="The material in contact with highly corrosive and hot environemnt. (e.g KOH, NaOH, HF, chloride productions, ammonia converters)">
+          <Frame>
+            <Option value="Operating at temperatures above 200C"
+              <Leaf value="Nichrome"/>
+            </Option>
+            <Option value="Operating at temperatures below 200C"
+              <Leaf value="Nickel 200"/>
+            </Option>
+          </Frame>
+         <Option value="The material is to be used in recirculating steam, condenser or broiler.">
+           <Frame>
+             <Option value="Steam Generater Tubing">
+               <Leaf Value="Nichrome"/>
+               <Leaf value="Inconel 600"/>
+               <Leaf value="Inconel 690"/>
+               <Leaf value="Incoloy 800"/>
+             </Option>
+             <Option value="Sodium coolant">
+               <Leaf value="Incoloy 800"/>
+             </Option>
+             <Option value="Seawater Condensers">
+               <Leaf value="Arsenical Aluminum Brass C68700"/>
+             </Option>
+             <Option value="Recirculating Steam System">
+               <Leaf value="Copper-Nickel Alloy"/>
+             </Option>
+           </Frame>
       </Frame>
     </Option>
     
