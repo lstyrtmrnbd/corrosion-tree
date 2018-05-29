@@ -26,9 +26,9 @@
           <Option value="High Strength stringers, frames, beams, or upper wing covers?">
             <Leaf value="Aluminum 7xxx"/>
           </Option>
-          <Option value=Moving or stationary parts within jet turbines?">
+          <Option value="Moving or stationary parts within jet turbines?">
             <Frame>
-             <Option value="Temperatures below 300 C such as the fan or the compressor parts?>
+             <Option value="Temperatures below 300 C such as the fan or the compressor parts?">
               <Leaf value="Ti-6Al-4V"/>
               <Leaf value="Ti 6-2-4-2"/>
               <Leaf value="TIMETAL 834"/>
@@ -121,13 +121,37 @@
       </Frame>
     </Option>
 
-    <Option value="Is the material used in underwater applications such as valves, pumps, or condensers?">
+    <Option value="The material used in underwater applications such as valves, pumps, or condensers">
       <Frame>
+        <Option value="Valves pumps gears and bushings">
+          <Leaf value="Bronze"/>
+          <Leaf value="Aluminum Bronze C95400"/>
+        </Option>
+        <Option value="Seawater Condensers">
+          <Leaf value="Arsenical Aluminum Brass C68700"/>
+        </Option>   
+        <Option value="Heat or Electrical Conductors">
+          <Leaf value="Copper Nickel 70/30 (C71500)"/>
+          <Leaf value="Copper Nickel 90/10"/>
+        </Option>        
       </Frame>
     </Option>
 
-    <Option value="Is material to be used in pipes in a mild environment?">
+    <Option value="The material is to be used in pipes in a mild environment">
       <Frame>
+        <Option value="Mild and continually wet environment exposed to rain and sunlight">
+          <Leaf value="Low-Alloy Steel"/>
+          <Leaf value="Copper"/>
+          <Leaf value="Nickel 200"/>
+          <Leaf value="Chromium"/>
+        </Option>
+        <Option value="Low amounts of chlorides, salt, moisture, direct sunlight">
+          <Leaf value="Carbon Steel"/>
+          <Leaf value="Copper"/>
+        </Option>   
+        <Option value="Completely hidden away, dry, or insulated">
+          <Leaf value="Carbon Steel"/>
+        </Option>        
       </Frame>
     </Option>
 
