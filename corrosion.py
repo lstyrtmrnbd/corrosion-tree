@@ -11,7 +11,7 @@ class MetalInfo:
         self.info = starting_dict
         self.name = self.info["name"]
 
-def read_metalinfo(filename):
+def read_metal_info(filename):
     tree = et.parse(filename)
     root = tree.getroot()
 
@@ -96,7 +96,7 @@ def into_frame(tag_frame, gui_frame):
             button = ttk.Button(frames[i], text=tag_frame[i].attrib["value"], command=select_option)
             button.grid(column=0, row=0)
 
-class TreeWalker:
+class TreeStepper:
 
     def __init__(self, base_frame, mainframe):
         self.base = base_frame
@@ -113,10 +113,13 @@ class TreeWalker:
         buttons = []
         i = 0
         for options in self.current_frame:
-            i += 1
-            current_button = ttk.Button(self.frames[i], command=option_select)
+            #current_label = ttk.Label()
+            current_button = Button(self.frames[i],
+                                    text=self.current_frame[i].attrib["value"],
+                                    wraplength=100,
+                                    command=option_select)
             current_button.grid(column=0, row=0)
-            
+            i += 1            
         
 def main():
 
@@ -127,18 +130,18 @@ def main():
     mainframe.columnconfigure(0, weight=1)
     mainframe.rowconfigure(0, weight=1)
     
-    metal_infos = read_metalinfo("data/MetalInfo.xml")
+    metal_infos = read_metal_info("data/MetalInfo.xml")
 
     frame_tree = read_frame_tree("data/MyMaterialV2.xml")
 
-    #walker = TreeWalker(frame_tree, mainframe)
+    step = TreeStepper(frame_tree, mainframe)
 
-    frames = grid_frames(43, mainframe)
+    #frames = grid_frames(43, mainframe)
 
-    for i in range(0, 42):
-        info_into_frame(frames[i], metal_infos[i])
+    #for i in range(0, 42):
+    #    info_into_frame(frames[i], metal_infos[i])
 
-    #walker.options_to_buttons()
+    step.options_to_buttons()
     
     root.mainloop()
     
