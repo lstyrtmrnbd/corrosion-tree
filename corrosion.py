@@ -58,8 +58,12 @@ def read_frame_tree(filename):
 
     return root.find("Frame")
 
-def new_frame_callback(tag_parent, gui_frame):
-    return None
+def make_select_option(tag_frame):
+
+    def select_option():
+        return None
+        
+    return select_option
 
 def refresh_frame(frame):
     if frame is not None:
@@ -82,18 +86,17 @@ def into_frame(tag_frame, gui_frame):
 
     frames = fill_frame(gui_frame, max_width, height)
     
-    if tag_frame is option:
+    if tag_frame.tag == "Frame":
         # loop through leaves and output the correct metal_infos
         for i in range(0, frames.length()):
-            info_into_frame(frames[i], find_info(gui_frame[i].attrib["value"]))
+            info_into_frame(frames[i], find_info(tag_frame[i].attrib["value"]))
         
-    if tag_frame is frame:
+    if tag_frame.tag == "Option":
         # loop through leaves and output the options as buttons
         for i in range(0, frames.length()):
-            button = ttk.Button(frames[i], text=tag_frame[i].attrib["value"])
+            button = ttk.Button(frames[i], text=tag_frame[i].attrib["value"], command=select_option)
             button.grid(column=0, row=0)
         
-                
 def main():
 
     root.title("Corrosion Decisions")
