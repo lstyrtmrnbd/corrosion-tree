@@ -18,6 +18,25 @@
 
     <Option value="Is the material used in aerospace as airplane body or turbines?">
       <Frame>
+          <Option value="Low strength covers, skins, panels"></Option>
+            <Leaf value="Al 2xxx">
+          </Option>    
+          <Option value="High Strength stringers, frames, beams, or upper wing covers?"?
+            <Leaf value=Aluminum 7xxx"
+          </Option>
+          <Option value=Moving or stationary parts within jet turbines?"
+            <Frame>
+             <Option value="Temperatures below 300 C such as the fan or the compressor parts?>
+              <Leaf value="Ti-6Al-4V">
+              <Leaf value="Ti 6-2-4-2">
+              <Leaf value="TIMETAL 834">
+              <Leaf value="Cobalt Alloys">
+             </Option>
+             <Option value="High temperature and stress such as turbine blades, combustion chamber, or exhaust?">
+               <Leaf value="Inconel 600">
+               <Leaf value="Inconel 690">
+               <Leaf value="Haynes Waspaloy">
+               <Leaf value="Cobalt Alloys">
       </Frame>
     </Option>
     
@@ -115,3 +134,4 @@
   <Option value="Pistons/Cylinder inserts?"></Option>
   <Leaf value="Nickel-Aluminum Alloys"/>
   <Option value="Recirculating Steam System"></Option>
+  <Leaf value="Copper-Nickel Alloy"/>
