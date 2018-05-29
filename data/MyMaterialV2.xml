@@ -20,7 +20,7 @@
 
     <Option value="Is the material used in aerospace as airplane body or turbines?">
       <Frame>
-          <Option value="Low strength covers, skins, panels"></Option>
+          <Option value="Low strength covers, skins, panels">
             <Leaf value="Al 2xxx"/>
           </Option>    
           <Option value="High Strength stringers, frames, beams, or upper wing covers?">
@@ -41,6 +41,7 @@
                <Leaf value="Cobalt Alloys"/>
              </Option>
             </Frame>
+          </Option>
       </Frame>
     </Option>
     
@@ -55,24 +56,26 @@
               <Leaf value="Nickel 200"/>
             </Option>
           </Frame>
-         <Option value="The material is to be used in recirculating steam, condenser or broiler.">
-           <Frame>
-             <Option value="Steam Generater Tubing">
-               <Leaf Value="Nichrome"/>
-               <Leaf value="Inconel 600"/>
-               <Leaf value="Inconel 690"/>
-               <Leaf value="Incoloy 800"/>
-             </Option>
-             <Option value="Sodium coolant">
-               <Leaf value="Incoloy 800"/>
-             </Option>
-             <Option value="Seawater Condensers">
-               <Leaf value="Arsenical Aluminum Brass C68700"/>
-             </Option>
-             <Option value="Recirculating Steam System">
-               <Leaf value="Copper-Nickel Alloy"/>
-             </Option>
-           </Frame>
+          <Option value="The material is to be used in recirculating steam, condenser or broiler.">
+            <Frame>
+              <Option value="Steam Generater Tubing">
+                <Leaf Value="Nichrome"/>
+                <Leaf value="Inconel 600"/>
+                <Leaf value="Inconel 690"/>
+                <Leaf value="Incoloy 800"/>
+              </Option>
+              <Option value="Sodium coolant">
+                <Leaf value="Incoloy 800"/>
+              </Option>
+              <Option value="Seawater Condensers">
+                <Leaf value="Arsenical Aluminum Brass C68700"/>
+              </Option>
+              <Option value="Recirculating Steam System">
+                <Leaf value="Copper-Nickel Alloy"/>
+              </Option>
+            </Frame>
+          </Option>
+        </Option>
       </Frame>
     </Option>
     
@@ -177,6 +180,5 @@
         </Option>        
       </Frame>
     </Option>
-
   </Frame>
 </root>
