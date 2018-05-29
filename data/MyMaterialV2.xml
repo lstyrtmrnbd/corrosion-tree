@@ -157,6 +157,24 @@
 
     <Option value="Is material to be used in automobiles?">
       <Frame>
+        <Option value="Pistons/Cylinder inserts">
+          <Leaf value="Al 2xxx"/>
+        </Option>
+        <Option value="Brake fluid or power steering lines">
+          <Leaf value="Copper-Nickel Alloy"/>
+          <Leaf value="SS 316"/>
+        </Option>   
+        <Option value="Gears or drive shafts">
+          <Leaf value="SS 316"/>
+          <Leaf value="SS 304"/>          
+          <Leaf value="Aluminum 3xxx"/>
+        </Option>
+        <Option value="Heating elements such as exhaust valves and glowplugs">
+          <Leaf value="Nichrome"/>
+        </Option>   
+        <Option value="Used in the body/frame">
+          <Leaf value="Carbon Steel"/>
+        </Option>        
       </Frame>
     </Option>
 
