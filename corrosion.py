@@ -61,6 +61,8 @@ def read_frame_tree(filename):
 def make_select_option(tag_frame):
 
     def select_option():
+        into_frame(tag_frame[0], gui_frame)
+        
         return None
         
     return select_option
@@ -70,32 +72,51 @@ def refresh_frame(frame):
         frame.destroy()
     frame = ttk.Frame(root, padding="3 3 3 3")
     frame.grid(column=0, row=0, sticky=(N, S, E, W))
-    frame.columconfigure(0, weight=1)
-    frame.rowconfigure(0, weight=1)
 
 def find_info(name):
     # finds the metal_info with this name
     return None
 
-def into_frame(tag_frame, gui_frame):
+def grid_frames(count, frame):
     max_width = 5
-    length = list(tag_frame).length()
-    height = ceil(length / 5)
-
-    refresh_frame(gui_frame)
-
-    frames = fill_frame(gui_frame, max_width, height)
+    height = ceil(count / 5)
     
-    if tag_frame.tag == "Frame":
-        # loop through leaves and output the correct metal_infos
-        for i in range(0, frames.length()):
-            info_into_frame(frames[i], find_info(tag_frame[i].attrib["value"]))
-        
+    return fill_frame(frame, max_width, height)
+    
+def into_frame(tag_frame, gui_frame):
+
     if tag_frame.tag == "Option":
-        # loop through leaves and output the options as buttons
-        for i in range(0, frames.length()):
+        # loop through leaves and output the correct metal_infos
+        for i in range(0, len(frames)):
+            info_into_frame(frames[i], find_info(tag_frame[i].attrib["value"]))
+
+    if tag_frame.tag == "Frame":
+        # loop through and output the options as buttons
+        for i in range(0, len(frames)):
             button = ttk.Button(frames[i], text=tag_frame[i].attrib["value"], command=select_option)
             button.grid(column=0, row=0)
+
+class TreeWalker:
+
+    def __init__(self, base_frame, mainframe):
+        self.base = base_frame
+        self.current_frame = self.base
+        self.current_option = self.base[0]
+        self.mainframe = mainframe
+        self.frames = grid_frames(len(list(self.base)), mainframe)
+        
+    def options_to_buttons(self):
+
+        def option_select():
+            return None
+    
+        buttons = []
+        i = 0
+        for options in self.current_frame:
+            i += 1
+            current_button = ttk.Button(self.frames[i], command=option_select)
+            current_button.grid(column=0, row=0)
+            
         
 def main():
 
@@ -105,17 +126,20 @@ def main():
     mainframe.grid(column=0, row=0, sticky=(N, S, E, W))
     mainframe.columnconfigure(0, weight=1)
     mainframe.rowconfigure(0, weight=1)
-
-    frames = fill_frame(mainframe, 7, 1)
-
+    
     metal_infos = read_metalinfo("data/MetalInfo.xml")
 
-    #frame_tree = read_frame_tree("data/MyMaterialV2.xml")
+    frame_tree = read_frame_tree("data/MyMaterialV2.xml")
 
-    info_into_frame(frames[0], metal_infos[0])
-    info_into_frame(frames[1], metal_infos[1])
-    info_into_frame(frames[2], metal_infos[2])
+    #walker = TreeWalker(frame_tree, mainframe)
 
+    frames = grid_frames(43, mainframe)
+
+    for i in range(0, 42):
+        info_into_frame(frames[i], metal_infos[i])
+
+    #walker.options_to_buttons()
+    
     root.mainloop()
     
 if __name__=="__main__":
