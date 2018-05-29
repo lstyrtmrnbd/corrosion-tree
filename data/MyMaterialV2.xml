@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
   <Frame>
-    <Option value="Is the material to be used in pharmaceutical or food industry where taste or color contamination is avoided?">
+    <Option value="The material is to be used in pharmaceutical or food industry where taste or color contamination is avoided.">
       <Frame>
-        <Option value="Food Storage or Countertops?">
-          <Leaf value="Aluminum or Al 3xxx alloys"/>
+        <Option value="Food Storage or Countertops.">
+          <Leaf value="Aluminum 3xxx"/>
+          <Leaf value="Aluminum"/>
+          <Leaf value="SS 304"/>
         </Option>
         <Option value="Knives">
-          <Leaf value="Austenitic Stainless Steel 304"/>
-          <Leaf value="Austenitic Stainless Steel 316"/>
+          <Leaf value="SS 304"/>
+          <Leaf value="SS 316"/>
         </Option>
         <Option value="Direct contact with drugs">
-          <Leaf value="Austenitic Stainless Steel 316"/>
+          <Leaf value="SS 316"/>
         </Option>
       </Frame>
     </Option>
@@ -24,7 +26,7 @@
           <Option value="High Strength stringers, frames, beams, or upper wing covers?">
             <Leaf value="Aluminum 7xxx"/>
           </Option>
-          <Option value=Moving or stationary parts within jet turbines?"
+          <Option value=Moving or stationary parts within jet turbines?">
             <Frame>
              <Option value="Temperatures below 300 C such as the fan or the compressor parts?>
               <Leaf value="Ti-6Al-4V"/>
@@ -46,10 +48,10 @@
       <Frame>
         <Option value="The material in contact with highly corrosive and hot environemnt. (e.g KOH, NaOH, HF, chloride productions, ammonia converters)">
           <Frame>
-            <Option value="Operating at temperatures above 200C"
+            <Option value="Operating at temperatures above 200C">
               <Leaf value="Nichrome"/>
             </Option>
-            <Option value="Operating at temperatures below 200C"
+            <Option value="Operating at temperatures below 200C">
               <Leaf value="Nickel 200"/>
             </Option>
           </Frame>
@@ -74,8 +76,48 @@
       </Frame>
     </Option>
     
-    <Option value="Is the material used in electronics as circuit-boards, wires, or covers etc.?">
+    <Option value="The material is used in electronics as circuit-boards, wires, or covers etc.">
       <Frame>
+        <Option value="Electronic Conducting Grade Materials">
+          <Leaf value="Nickel 200"/>
+          <Leaf value="Nickel 205"/>
+          <Leaf value="Nickel 270"/>
+          <Leaf value="Copper-Nickel Alloy"/>
+          <Leaf value="Copper 101/102"/>
+          <Leaf value="Phosphor Bronze C52400"/>
+          <Leaf value="Nickel-Silver (Alloy 770)"/>
+        </Option>
+        <Option value="Low-Expansion Alloys">
+          <Leaf value="Super Invar 32-5"/>
+          <Leaf value="Invar 36"/>
+          <Leaf value="42 Alloy"/>
+        </Option>
+        <Option value="Controlled-Expansion Alloys">
+          <Leaf value="Kovar"/>
+          <Leaf value="45 Alloy"/>
+          <Leaf value="50 Alloy"/>
+        </Option>
+        <Option value="Magnetic Shielding">
+          <Leaf value="HyMu 80"/>
+          <Leaf value="45 Alloy"/>
+          <Leaf value="50 Alloy"/>
+        </Option>
+        <Option value="Etching and Stencil Grade">
+          <Leaf value="SS 316"/>          
+          <Leaf value="SS 304"/>
+          <Leaf value="Invar 36"/>
+          <Leaf value="42 Alloy"/>
+        </Option>          
+        <Option value="High Temperature and Corrosion Resistant">
+          <Leaf value="Molybdenum"/>
+          <Leaf value="Tungsten"/>
+          <Leaf value="Tantalum"/>
+          <Leaf value="Titanium"/>
+          <Leaf value="SS 304"/>
+          <Leaf value="SS 316"/>
+          <Leaf value="Inconel 600"/>
+          <Leaf value="Inconel 718"/>
+        </Option>        
       </Frame>
     </Option>
 
@@ -96,71 +138,3 @@
 
   </Frame>
 </root>
-
-  
-  <Option value="Low amounts of chlorides, salt, moisture, direct sunlight?"></Option>
-  <Option value="Completely hidden away, dry, or insulated?"></Option>
-  <Leaf value="Uncoated Carbon Steel"/>
-  <Leaf value="Coated Carbon Steel or Copper"/>
-  <Option value="Mild and continually wet environment exposed to rain and sunlight?"></Option>
-  <Leaf value="Low Alloy Steel Cu, Ni, Cr, etc"/>
-  <Leaf value="Copper-Nickel Alloy"/>
-  <Leaf value="Austinetic Stainless Steel"/>
-  <Option value="Is material in contact with highly corrosive and hot environemnt? KOH, NaOH, HF, chle productions, ammonia converters?"></Option>
-  <Leaf value="Nickel- Chromium- Iron"/>
-  <Leaf value="Commercially Pure Nickel Ni-200"/>
-  <Option value="Operating temperatures above 200C?"></Option>
-  <Option value="Yes"></Option>
-  <Option value="Airplane wing covers, panels, fuselage skins or other body parts?"></Option>
-  <Option value="Moving or stationary parts within jet turbines?"></Option>
-  <Option value="Yes"></Option>
-  <Option value="No"></Option>
-  <Leaf value="Al-Cu Alloys 2000 series"/>
-  <Leaf value="Al-Zn-Mg-Mn Alloys 7000 series"/>
-  <Option value="High Strength stringers, frames, beams, or upper wing covers?"></Option>
-  <Leaf value="Nickel Alloys Inconel Waspaloy Cobalt Alloys"/>
-  <Option value="Temperatures below 300 C such as the fan or the compressor parts?"></Option>
-  <Leaf value="Titanium  Alloys Ti-6Al-4V Ti6-2-4-2 Cobalt Alloys"/>
-  <Option value="High temperature and stress such as turbine blades, combustion chamber, or exhaust?"></Option>
-  <Option value="Used in the body/frame?"></Option>
-  <Leaf value="Carbon Steel"/>
-  <Option value="Seawater Condensers"></Option>
-  <Leaf value="Arsenical Aluminum Brass"/>
-  <Option value="Valves pumps gears and bushings"></Option>
-  <Option value="Bronzes and Aluminum Bronzes"></Option>
-  <Option value="Heat or Electrical Conductors"></Option>
-  <Leaf value="Copper Nickel CDA 715"/>
-  <Option value="Is the material to be used in recirculating steam, condenser or broiler?"></Option>
-  <Option value="Yes"></Option>
-  <Option value="Electronic Conducting Grade Materials"></Option>
-  <Option value="Low-Expansion Alloys"></Option>
-  <Option value="Controlled-Expansion Alloys"></Option>
-  <Option value="Magnetic Shielding Alloys"></Option>
-  <Option value="Steam Generater Tubing"></Option>
-  <Leaf value="Nickel- Chromium- Iron, Alloy 600, 690, 800"/>
-  <Leaf value="Super Invar, Invar 36, Alloy 42 Nickel-Steel Alloys"/>
-  <Option value="Sodium Coolant"></Option>
-  <Leaf value="Nickel-Iron-Cobalt Kovar"/>
-  <Leaf value="Alloy 800 2.25Cr- 1 Mo"/>
-  <Leaf value="45-50 Nickel-Steel Alloys"/>
-  <Leaf value="HyMu 80 Nickel-Iron-Molybdenum"/>
-  <Option value="Seawater Condensers"></Option>
-  <Leaf value="Arsenical Aluminum Brass C68700"/>
-  <Option value="Etching and Stencil Grade Alloys"></Option>
-  <Leaf value="Invar 36, Alloy 42 Stainless Steels"/>
-  <Leaf value="Nickel 200,201,205,270 Cupro Nickel Copper 101, 102 Phosphor Bronze Nickel-Silver Alloy 770"/>
-  <Option value="High Temperature and Corrosion Resistant"></Option>
-  <Leaf value="Molybdenum Tungsten Titanium Tantalum"/>
-  <Leaf value="302, 304, 316 Stainless 600, 625, 718, 750 Nickel"/>
-  <Option value="Low strength covers, skins, panels"></Option>
-  <Option value="Text"></Option>
-  <Option value="Heating elements such as exhaust valves and glowplugs?"></Option>
-  <Leaf value="Nickel-Chromium Alloys"/>
-  <Option value="Gears or drive shafts?"></Option>
-  <Option value="Brake fluid lines or power steering lines?"></Option>
-  <Leaf value="Copper-Nickel Alloys"/>
-  <Leaf value="Nickel alloy steels AISI 4340"/>
-  <Option value="Pistons/Cylinder inserts?"></Option>
-  <Leaf value="Nickel-Aluminum Alloys"/>
-  <Option value="Recirculating Steam System"></Option>
-  <Leaf value="Copper-Nickel Alloy"/>
