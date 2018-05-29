@@ -3,6 +3,8 @@ from tkinter import ttk
 from math import *
 import xml.etree.ElementTree as et
 
+root = Tk()
+
 class MetalInfo:
 
     def __init__(self, starting_dict):
@@ -56,49 +58,43 @@ def read_frame_tree(filename):
 
     return root.find("Frame")
 
-def options_into_frame(parent, frame):
+def new_frame_callback(tag_parent, gui_frame):
+    return None
+
+def refresh_frame(frame):
+    if frame is not None:
+        frame.destroy()
+    frame = ttk.Frame(root, padding="3 3 3 3")
+    frame.grid(column=0, row=0, sticky=(N, S, E, W))
+    frame.columconfigure(0, weight=1)
+    frame.rowconfigure(0, weight=1)
+
+def find_info(name):
+    # finds the metal_info with this name
+    return None
+
+def into_frame(tag_frame, gui_frame):
     max_width = 5
-    length = list(parent).length()
-    height = ceil(length / 2)
+    length = list(tag_frame).length()
+    height = ceil(length / 5)
+
+    refresh_frame(gui_frame)
+
+    frames = fill_frame(gui_frame, max_width, height)
     
-    frames = fill_frame(length, max_width, height)
-
-    for frame in frames:
-        button = ttk.Button(frame)
-        button.grid(column=0, row=0)
-
-class Tree:
-
-    def __init__(self, root_node):
-        self.current_node = root_node
-
-    def branch(self, child_index):
-        self.current_node = self.current_node.children[child_index]
-
-class Node:
-
-    def __init__(self, options, *children):
-        self.children = children
-        self.options = options
-
-    def option_button(self, frame, option_index):
-        button = ttk.Button(frame, text=options[option_index])
-
-    def into_frame(self, frame):
-        frames = fill_frame(frame, options.length(), 1)
-
+    if tag_frame is option:
+        # loop through leaves and output the correct metal_infos
         for i in range(0, frames.length()):
-            self.option_button(frame[i], i)
-
-class Leaf(Node):
-
-    def __init__(self, metal_infos_list):
-        Node.__init__(self, "")
-        self.metal_infos = metal_infos_list
-     
+            info_into_frame(frames[i], find_info(gui_frame[i].attrib["value"]))
+        
+    if tag_frame is frame:
+        # loop through leaves and output the options as buttons
+        for i in range(0, frames.length()):
+            button = ttk.Button(frames[i], text=tag_frame[i].attrib["value"])
+            button.grid(column=0, row=0)
+        
+                
 def main():
-
-    root = Tk()
 
     root.title("Corrosion Decisions")
     
@@ -111,17 +107,13 @@ def main():
 
     metal_infos = read_metalinfo("data/MetalInfo.xml")
 
+    #frame_tree = read_frame_tree("data/MyMaterialV2.xml")
+
     info_into_frame(frames[0], metal_infos[0])
     info_into_frame(frames[1], metal_infos[1])
     info_into_frame(frames[2], metal_infos[2])
 
     root.mainloop()
     
-# misc. API examples: 
-# blue1 = Node("Whatever end")
-# red1 = Node("Whatever i say", blue1, child2)
-# Node.branch(childValue)
-# Tree(rootNode)
-
 if __name__=="__main__":
    main()
