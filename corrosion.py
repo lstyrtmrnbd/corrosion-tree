@@ -35,13 +35,13 @@ def info_into_frame(frame, metal_info):
 
 ## these two could be genericized together but it isn't worth the effort
 def label_into_frame(frame):
-    Label(frame, anchor="w", text="").grid(column=1, row=1)
-    Label(frame, anchor="w", text="Price").grid(column=1, row=2)
-    Label(frame, anchor="w", text="Density").grid(column=1, row=3)
-    Label(frame, anchor="w", text="Tensile strength").grid(column=1, row=4)
-    Label(frame, anchor="w", text="Thermal conductivity").grid(column=1, row=5)
-    Label(frame, anchor="w", text="Melting point").grid(column=1, row=6)
-    Label(frame, anchor="w", text="Specific heat").grid(column=1, row=7)
+    Label(frame, text="").grid(column=1, row=1)
+    Label(frame, text="Price (USD/lb)").grid(column=1, row=2, sticky=W)
+    Label(frame, text="Density (lb/ft^3)").grid(column=1, row=3, sticky=W)
+    Label(frame, text="Tensile strength (ksi)").grid(column=1, row=4, sticky=W)
+    Label(frame, text="Thermal conductivity (BTU in/ft^2 hr F)").grid(column=1, row=5, sticky=W)
+    Label(frame, text="Melting point (F)").grid(column=1, row=6, sticky=W)
+    Label(frame, text="Specific heat (BTU/lb F)").grid(column=1, row=7, sticky=W)
 
 ## fills a frame with a grid of frames
 def fill_frame(mainframe, width, height):
