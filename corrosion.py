@@ -3,6 +3,8 @@ from tkinter import ttk
 from math import *
 import xml.etree.ElementTree as et
 
+gui_columns = 5 # amount of columns in a gui row
+
 class MetalInfo:
 
     def __init__(self, starting_dict):
@@ -23,20 +25,37 @@ def read_metal_info(filename):
     return metal_infos
 
 def info_into_frame(frame, metal_info):
-    metal_name = ttk.Label(frame, text=metal_info.info["name"])
-    metal_name.grid(column=1, row=1)
-    metal_price = ttk.Label(frame, text=metal_info.info["price"])
-    metal_price.grid(column=1, row=2)
-    metal_density = ttk.Label(frame, text=metal_info.info["density"])
-    metal_density.grid(column=1, row=3)
-    metal_tensile = ttk.Label(frame, text=metal_info.info["tensile_strength"])
-    metal_tensile.grid(column=1, row=4)
-    metal_thermal = ttk.Label(frame, text=metal_info.info["thermal_conductivity"])
-    metal_thermal.grid(column=1, row=5)
-    metal_melting = ttk.Label(frame, text=metal_info.info["melting_point"])
-    metal_melting.grid(column=1, row=6)
-    metal_specific = ttk.Label(frame, text=metal_info.info["specific_heat"])
-    metal_specific.grid(column=1, row=7)
+    name = ttk.Label(frame, text=metal_info.info["name"])
+    name.grid(column=1, row=1)
+    price = ttk.Label(frame, text=metal_info.info["price"])
+    price.grid(column=1, row=2)
+    density = ttk.Label(frame, text=metal_info.info["density"])
+    density.grid(column=1, row=3)
+    tensile = ttk.Label(frame, text=metal_info.info["tensile_strength"])
+    tensile.grid(column=1, row=4)
+    thermal = ttk.Label(frame, text=metal_info.info["thermal_conductivity"])
+    thermal.grid(column=1, row=5)
+    melting = ttk.Label(frame, text=metal_info.info["melting_point"])
+    melting.grid(column=1, row=6)
+    specific = ttk.Label(frame, text=metal_info.info["specific_heat"])
+    specific.grid(column=1, row=7)
+
+# these two could be genericized together but it isn't worth the effort
+def label_into_frame(frame):
+    name = ttk.Label(frame, text="")
+    name.grid(column=1, row=1)
+    price = ttk.Label(frame, text="Price")
+    price.grid(column=1, row=2)
+    density = ttk.Label(frame, text="Density")
+    density.grid(column=1, row=3)
+    tensile = ttk.Label(frame, text="Tensile strength")
+    tensile.grid(column=1, row=4)
+    thermal = ttk.Label(frame, text=metal_info.info["Thermal conductivity"])
+    thermal.grid(column=1, row=5)
+    melting = ttk.Label(frame, text=metal_info.info["Melting point"])
+    melting.grid(column=1, row=6)
+    specific = ttk.Label(frame, text=metal_info.info["Specific heat"])
+    specific.grid(column=1, row=7)
 
 ## fills a frame with a grid of frames
 def fill_frame(mainframe, width, height):
@@ -58,10 +77,9 @@ def read_frame_tree(filename):
     return root.find("Frame")
 
 def grid_frames(count, frame):
-    max_width = 5
-    height = ceil(count / 5)
+    height = ceil(count / gui_columns)
     
-    return fill_frame(frame, max_width, height)
+    return fill_frame(frame, gui_columns, height)
 
 class TreeStepper:
 
