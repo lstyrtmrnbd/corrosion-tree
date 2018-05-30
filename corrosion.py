@@ -57,16 +57,6 @@ def read_frame_tree(filename):
 
     return root.find("Frame")
 
-def refresh_frame(frame):
-    if frame is not None:
-        frame.destroy()
-    frame = ttk.Frame(root, padding="3 3 3 3")
-    frame.grid(column=0, row=0, sticky=(N, S, E, W))
-
-def find_info(name):
-    # finds the metal_info with this name
-    return None
-
 def grid_frames(count, frame):
     max_width = 5
     height = ceil(count / 5)
