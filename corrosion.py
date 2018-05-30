@@ -100,27 +100,44 @@ class TreeStepper:
 
     def __init__(self, base_frame, mainframe):
         self.base = base_frame
-        self.current_frame = self.base
-        self.current_option = self.base[0]
+        #self.current_frame = self.base
+        #self.current_option = self.base[0]
+        self.current_tag = self.base
         self.mainframe = mainframe
-        self.frames = grid_frames(len(list(self.base)), mainframe)
+        self.frames = grid_frames(len(list(self.base)) + 1, mainframe)
+
+
+    def step(self, index):
+        #steps one tag deeper into the tree
+        #self.current_tag = self.current_tag[index]
+        #self.output.configure(text=self.current_tag[index])
+        self.output.configure(text=index)
         
     def options_to_buttons(self):
 
-        def option_select():
-            return None
-    
+        def make_option_select(index):
+
+            def option_select():
+                self.step(index)
+
+            return option_select
+
         buttons = []
         i = 0
-        for options in self.current_frame:
-            #current_label = ttk.Label()
+        for options in self.current_tag:
+            option_select = make_option_select(i)
             current_button = Button(self.frames[i],
-                                    text=self.current_frame[i].attrib["value"],
+                                    text=self.current_tag[i].attrib["value"],
                                     wraplength=100,
                                     command=option_select)
             current_button.grid(column=0, row=0)
-            i += 1            
-        
+            i += 1
+
+        self.output = Label(self.frames[i],
+                            text=self.current_tag[0].attrib["value"],
+                            wraplength=100)
+        self.output.grid(column=0, row=0)
+            
 def main():
 
     root.title("Corrosion Decisions")
@@ -129,19 +146,22 @@ def main():
     mainframe.grid(column=0, row=0, sticky=(N, S, E, W))
     mainframe.columnconfigure(0, weight=1)
     mainframe.rowconfigure(0, weight=1)
+
+    subframe = ttk.Frame(mainframe, padding="3 3 3 3")
+    subframe.grid(column=0, row=0, sticky=(N, S, E, W))
     
     metal_infos = read_metal_info("data/MetalInfo.xml")
 
     frame_tree = read_frame_tree("data/MyMaterialV2.xml")
 
-    step = TreeStepper(frame_tree, mainframe)
+    stepper = TreeStepper(frame_tree, mainframe)
 
     #frames = grid_frames(43, mainframe)
 
     #for i in range(0, 42):
     #    info_into_frame(frames[i], metal_infos[i])
 
-    step.options_to_buttons()
+    stepper.options_to_buttons()
     
     root.mainloop()
     
