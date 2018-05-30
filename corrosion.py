@@ -44,7 +44,7 @@ def fill_frame(mainframe, width, height):
 
     for w in range(0, width):
         for h in range(0, height):
-            current_frame = ttk.Frame(mainframe)
+            current_frame = ttk.Frame(mainframe, padding="3 3 3 3")
             current_frame.grid(column=w, row=h)
             frames.append(current_frame)
         
@@ -70,10 +70,8 @@ class TreeStepper:
         self.current_tag = self.base
         self.mainframe = mainframe
         self.supframe = None
-        self.regrid(len(list(self.base)) + 1)
+        self.regrid(len(list(self.base)))
         self.metal_infos = metal_infos
-        #self.current_tag = self.base
-        #self.frames = grid_frames(len(list(self.base)) + 1, supframe) # +1 for output
 
     def regrid(self, count):
         if self.supframe != None:
@@ -84,10 +82,9 @@ class TreeStepper:
         self.frames = grid_frames(count, self.supframe)
 
     def step(self, index):
-        #steps one tag deeper into the tree
+        """ Step one tag deeper into the tree """
         self.current_tag = self.current_tag[index]
-        #if self.current_tag.tag != "Frame":
-        self.output.configure(text=self.current_tag.tag)
+        #self.output.configure(text=self.current_tag.tag)
         self.evaluate_current()
         
     def options_to_buttons(self):
@@ -110,23 +107,26 @@ class TreeStepper:
             current_button.grid(column=0, row=0)
             i += 1
 
-        self.output = Label(self.frames[i],
-                            text=self.current_tag[0].attrib["value"],
-                            wraplength=100)
-        self.output.grid(column=0, row=0)
+        # Debug
+        #self.output = Label(self.frames[i],
+        #                    text=self.current_tag[0].attrib["value"],
+        #                    wraplength=100)
+        #self.output.grid(column=0, row=0)
 
     def leaves_to_labels(self):
         i = 0
         for leaf in self.current_tag:
             info_into_frame(self.frames[i], self.metal_infos[leaf.attrib["value"]])
+            i += 1
 
     def evaluate_current(self):
+        """ Act based on current tag """
         if self.current_tag.tag == "Option":
             if self.current_tag[0].tag == "Leaf":
                 self.regrid(len(list(self.current_tag)))
                 self.leaves_to_labels()
-            else: 
-                self.current_tag = self.current_tag[0]
+            else:
+                self.current_tag = self.current_tag[0] 
         
         if self.current_tag.tag == "Frame":
             self.regrid(len(list(self.current_tag)))
