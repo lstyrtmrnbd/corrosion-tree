@@ -116,7 +116,8 @@ class TreeStepper:
         length = len(list(self.current_tag))
         height = ceil(length / gui_columns)
 
-        self.regrid(length + height) # add one more frame to each row for labels
+         # add one more frame to each row for labels, and 1 more
+        self.regrid(length + height + 1) # +1 for restart button
         
         for i in range(0, length + height):
             if i % gui_columns == 0:
@@ -124,6 +125,13 @@ class TreeStepper:
                 j += 1
             else:
                 info_into_frame(self.frames[i], self.metal_infos[self.current_tag[i - j].attrib["value"]])
+
+        def rebase():
+            self.current_tag = self.base
+            self.regrid(len(list(self.base)))
+            self.options_to_buttons()
+            
+        Button(self.frames[length + height], text="Restart", command=rebase).grid(column=0, row=0)
 
     def evaluate_current(self):
         """ Act based on current tag """
