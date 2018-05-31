@@ -11,6 +11,7 @@ class MetalInfo:
         self.info = starting_dict
         self.name = self.info["name"]
 
+## returns a dictionary of metalinfo indexed by name
 def read_metal_info(filename):
     tree = et.parse(filename)
     root = tree.getroot()
@@ -20,7 +21,6 @@ def read_metal_info(filename):
     for child in root:
         current_info = MetalInfo(child.attrib)
         metal_infos[current_info.name] = current_info
-        #metal_infos.append(current_info)
 
     return metal_infos
 
@@ -47,8 +47,8 @@ def label_into_frame(frame):
 def fill_frame(mainframe, width, height):
     frames = []
 
-    for w in range(0, width):
-        for h in range(0, height):
+    for h in range(0, height):
+        for w in range(0, width):
             current_frame = ttk.Frame(mainframe, padding="3 3 3 3")
             current_frame.grid(column=w, row=h)
             frames.append(current_frame)
@@ -112,15 +112,18 @@ class TreeStepper:
             i += 1
 
     def leaves_to_labels(self):
-        i = 0
+        j = 0
         length = len(list(self.current_tag))
-        self.regrid(length + ceil(length / gui_columns)) # add one more frame to each row for labels
-        for leaf in self.current_tag:
+        height = ceil(length / gui_columns)
+
+        self.regrid(length + height) # add one more frame to each row for labels
+        
+        for i in range(0, length + height):
             if i % gui_columns == 0:
                 label_into_frame(self.frames[i])
+                j += 1
             else:
-                info_into_frame(self.frames[i], self.metal_infos[leaf.attrib["value"]])
-            i += 1
+                info_into_frame(self.frames[i], self.metal_infos[self.current_tag[i - j].attrib["value"]])
 
     def evaluate_current(self):
         """ Act based on current tag """
